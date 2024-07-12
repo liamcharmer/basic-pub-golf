@@ -5,7 +5,8 @@ const sw = process.env.SW === "true";
 export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
   devtools: { enabled: true },
-  modules: ["@nuxt/ui"],
+  ssr: true,
+  modules: ["@nuxt/ui", "@nuxtjs/robots", "@vite-pwa/nuxt"],
   pwa: {
     strategies: sw ? "injectManifest" : "generateSW",
 
@@ -90,5 +91,8 @@ export default defineNuxtConfig({
         { rel: "theme-color", content: "#14141d" },
       ],
     },
+  },
+  robots: {
+    rules: [{ UserAgent: "*" }, { Disallow: "/" }],
   },
 });
