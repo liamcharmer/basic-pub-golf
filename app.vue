@@ -89,7 +89,9 @@
 
 <script setup>
 import { useLocalStorage } from "~/composables/useLocalStorage";
-
+useHead({
+  title: `Pub Golf`,
+});
 const { setItem, getItem, removeItem } = useLocalStorage();
 let user = ref(null);
 
