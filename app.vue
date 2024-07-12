@@ -260,3 +260,8 @@ async function wipeUsers() {
   removeItem("user");
 }
 </script>
+<style>
+body {
+  padding-top: env(safe-area-inset-top);
+}
+</style>
